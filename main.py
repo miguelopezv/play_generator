@@ -3,10 +3,11 @@ import tensorflow as tf
 
 shakespeare_url = 'https://storage.googleapis.com/download.tensorflow.org/data/shakespeare.txt'
 
-res = input('We are going to train our model with a default play, or dou you want to use a custom file? ['
-            '\'default/custom\']: ')
+res = input('We are going to train our model with a default play, if ok press ENTER otherwise write \'custom\': ')
+while res not in ['', 'custom']:
+    res = input('wrong answer! please leave empty for default, or write \'custom\':')
 
-path_to_file = tf.keras.utils.get_file('shakespeare.txt', shakespeare_url) if res == 'default' else 'ownFile'
+path_to_file = tf.keras.utils.get_file('shakespeare.txt', shakespeare_url) if res == '' else 'ownFile'
 text = open(path_to_file, 'rb').read().decode(encoding='utf-8')
 
 vocab = sorted(set(text))
