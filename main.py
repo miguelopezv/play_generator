@@ -14,7 +14,6 @@ text = open(path_to_file, 'rb').read().decode(encoding='utf-8')
 
 vocab = sorted(set(text))
 char2idx = {char: i for i, char in enumerate(vocab)}
-# idx2npArr = np.array(vocab)
 text_as_int = encode(char2idx, text)
 
 # divide dataset into batches
