@@ -15,3 +15,8 @@ or choose your own file (spported formats txt and rtf).
 - the prompt will ask you to enter a string and will create a new output based on that, in the style of the text you povided as training.
 
 That's it! 🎉
+
+
+
+
+> **_NOTE:_**  If you want to train the model with a different text then you should rename or delete `training_checkpoints` folder, uncomment line 38 and comment lines 40-45, and do the previous steps again.
