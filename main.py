@@ -1,14 +1,19 @@
+from tkinter import filedialog as fd
+
 import numpy as np
 import tensorflow as tf
 
-from constants import SHAKESPEARE_URL, BATCH_SIZE, EMBEDDING_DIM, RNN_UNITS, BUFFER_SIZE, SEQ_LENGTH
-from helpers import encode, split_input_target, build_model, loss, checkpoint_callback
+from constants import SHAKESPEARE_URL, BATCH_SIZE, EMBEDDING_DIM, RNN_UNITS, BUFFER_SIZE, SEQ_LENGTH, CHECKPOINTS_DIR
+from helpers import encode, split_input_target, build_model, loss, checkpoint_callback, generate_text
 
 res = input('We are going to train our model with a default play, if ok press ENTER otherwise write \'custom\': ')
 while res not in ['', 'custom']:
     res = input('wrong answer! please leave empty for default, or write \'custom\':')
 
-path_to_file = tf.keras.utils.get_file('shakespeare.txt', SHAKESPEARE_URL) if res == '' else 'ownFile'
+path_to_file = tf.keras.utils.get_file('shakespeare.txt', SHAKESPEARE_URL) if res == '' else fd.askopenfilename(
+    filetypes=[('Text Files', '*.txt'), ('Text File', '*.rtf')],
+    title='select your file to train the model')
+
 text = open(path_to_file, 'rb').read().decode(encoding='utf-8')
 
 vocab = sorted(set(text))
