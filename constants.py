@@ -1,4 +1,5 @@
 SHAKESPEARE_URL = 'https://storage.googleapis.com/download.tensorflow.org/data/shakespeare.txt'
+EPOCHS = 50
 BATCH_SIZE = 64
 EMBEDDING_DIM = 256
 RNN_UNITS = 1024
