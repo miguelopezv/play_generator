@@ -29,7 +29,7 @@ model = build_model(len(vocab), EMBEDDING_DIM, RNN_UNITS, BATCH_SIZE)
 model.compile(optimizer='adam', loss=loss)
 
 # Comment this line after the model has been trained
-history = model.fit(data, epochs=1, callbacks=[checkpoint_callback])
+history = model.fit(data, epochs=50, callbacks=[checkpoint_callback])
 
 # With model already trained, use this to recreate the model expecting 1 input
 # model = build_model(len(vocab), EMBEDDING_DIM, RNN_UNITS, batch_size=1)
