@@ -5,7 +5,7 @@ Creates text based on Shakespeare or any other text you want to.
 
 if this is the first time you run it, verify that lines 40-45 are commented.
 
-- execute ```python main.py```, it will ask you to leave the input empy if you want to use the dafault training dataset (Shakespeare's Romeo and Juliet) 
+- run ```python main.py```, it will ask you to leave the input empy if you want to use the dafault training dataset (Shakespeare's Romeo and Juliet) 
 or choose your own file (spported formats txt and rtf).
 
 - let the model runt it's training, if it's taking too long you can change the number of epochs on the `constants.py` file
