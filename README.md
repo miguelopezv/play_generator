@@ -20,3 +20,7 @@ That's it! 🎉
 
 
 > **_NOTE:_**  If you want to train the model with a different text then you should rename or delete `training_checkpoints` folder, uncomment line 38 and comment lines 40-45, and do the previous steps again.
+
+
+### Dependencies
+This repo uses NumPy and Tensorflow, if you are using a M1 or M2 Processor its better to install `tensorflow-macos`, any other platform should us tensorflow package. You can edit this on the `requirements.txt` file.
